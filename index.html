@@ -1,9 +1,163 @@
+<!DOCTYPE html>
 <html>
- 
+<head>
+<title>My Coding Cheatsheet</title>
+<link href="style.css" rel="stylesheet">
+</head>
+
 <body>
-  <h1>Mark Anderson</h1>
-  <p>Welcome to my website!</p>
-  <img src="https://content.codecademy.com/articles/github-pages-via-web-app/happy-ice-cream.gif" />
+<div class="headerbanner">
+<h1>HTML Reference Tables</h1>
+</div>
+<h2>Table Tags</h2>
+<table>
+    <thead>
+        <tr>
+            <th scope="col">Tag</th>
+            <th scope="col">Name</th>
+            <th scope="col">Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><mark>&lt;table&gt;</mark></td>
+            <td>Table</td>
+            <td>The wrapper element for all HTML tables.</td>
+        </tr>
+        <tr>
+            <td><mark>&lt;thead&gt;</mark></td>
+            <td>Table Head</td>
+            <td>The set of rows defining the column headers in a table.</td>
+        </tr>
+        <tr>
+            <td><mark>&lt;tbody&gt;</mark></td>
+            <td>Table Body</td>
+            <td>The set of rows containing actual table data.</td>
+        </tr>
+        <tr>
+            <td><mark>&lt;tr&gt;</mark></td>
+            <td>Table Row</td>
+            <td>The table row container. Use to start a new row.</td>
+        </tr>
+        <tr>
+            <td><mark>&lt;td&gt;</mark></td>
+            <td>Table Data</td>
+            <td>The table data container. Where you type the content for each cell of the table.</td>
+        </tr>
+        <tr>
+            <td><mark>&lt;th&gt;</mark></td>
+            <td>Table Header</td>
+            <td>Defines a cell as a head of a group of table cells. By default this text is bold and centered.</td>
+        </tr>
+        <tr>
+            <td><mark>&lt;tfoot&gt;</mark></td>
+            <td>Table Foot</td>
+            <td>The set of rows defining the footer in a table.</td>
+        </tr>
+    </tbody>
+</table>
+
+<h2>Table Attributes</h2>
+<table>
+    <thead>
+        <tr>
+            <th scope="col">Attribute</th>
+            <th scope="col">Name</th>
+            <th scope="col">Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><mark>colspan</mark></td>
+            <td>Column Span</td>
+            <td>Specifies the number of columns a table cell should span.</td>
+        </tr>
+        <tr>
+            <td><mark>rowspan</mark></td>
+            <td>Row Span</td>
+            <td>Specifies the number of rows a table cell should span.</td>
+        </tr>
+    </tbody>
+</table>
+
+<h2>Form Tags and Attributes</h2>
+<table>
+    <thead>
+        <tr>
+            <th scope="col">Tag</th>
+            <th scope="col">Name</th>
+            <th scope="col">Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><mark>&lt;form&gt;</mark></td>
+            <td>Form</td>
+            <td>Creates a form to collect information</td>
+        </tr>
+        <tr>
+            <td><mark>&lt;input&gt;</mark></td>
+            <td>Input</td>
+            <td>Creates an Input field. Use a name="" attribute for the information to be sent when the form is submitted and use a type="" attribute to determine how it renders on the page:<br><br><b><u>type attributes</u></b>
+            <ul>
+                <li><b>"text"</b> = renders a text box for a user to type into.</li>
+                <li><b>"password"</b> = will replace the input text with another character like an asterisk (*) or a dot (•).</li>
+                <li><b>"number"</b> = can restrict what is typed into input field to just numbers and a few special characters. We can also provide a "step" attribute which creates arrows inside the input field to increase or decrease by the value of the step attribute.</li>
+                <li><b>"range"</b> = creates a slider. Can assing values to the "min" and "max" attributes of the <mark>&lt;input&gt;</mark>. Can also use the "step" attribute to control how fluid the slider works (smaller value= more fluid). </li>
+                <li><b>"checkbox"</b> = Each <mark>&lt;input&gt;</mark> uses the same value for the "name" attribute. This groups the inputs together. Each <mark>&lt;input&gt;</mark> has a unique "id" to pair with a <mark>&lt;label&gt;</mark>. There are assigned values to the "value" attribute of the checkboxes. These values are not visible on the form. Use an associated <mark>&lt;label&gt;</mark> "for" to identify the checkbox.</li>
+                <li><b>"radio</b> = like "checkbox", but only one can be selected (from those with same "name" attribute).</li>
+                <li><b>"submit"</b> = creates a submit button.</li>
+            </ul>
+            </td>
+        </tr>
+        <tr>
+            <td><mark>&lt;label&gt;</mark></td>
+            <td>Label</td>
+            <td>Has an opening and closing tag. Displays text that is written between opening and closing tag. To associate a <mark>&lt;label&gt;</mark> and <mark>&lt;input&gt;</mark>, the <mark>&lt;input&gt;</mark> needs an "id" attribute. We then assign the "for" attribute of the <mark>&lt;label&gt;</mark> element with the value of the "id" attribute of <mark>&lt;input&gt;</mark>.</td>
+        </tr>
+        <tr>
+            <td><mark>&lt;select&gt; & <mark>&lt;option&gt;</mark></td>
+            <td>Datalist Input</td>
+            <td>select needs "id" and "name" attributes ("id" to link to "for" attribute of <mark>&lt;label&gt;</mark>). The <mark>&lt;option&gt;</mark> elements go between the <mark>&lt;select&gt;</mark> tags. The text that is rendered in the list is the text included between the opening and closing <mark>&lt;option&gt;</mark> tags. However, it is the value of the "value" attribute that is used in form submission (and "name" attribute of <mark>&lt;select&gt;</mark>).  </td>
+        </tr>
+        <tr>
+            <td><mark>&lt;datalist&gt;</mark></td>
+            <td>Creates a dropdown list</td>
+            <td>used with a <mark>&lt;input type="text" list="LIST NAME"&gt;</mark> element ("id" attribute of <mark>&lt;datalist&gt;</mark> is associated with "list"). The input creates a text field that users can type into and filter options from the datalist. Then use <mark>&lt;option&gt;</mark> elements like dropdown lists (don't need text in between <mark>&lt;option&gt;</mark> opening and closing tags).</td>
+        </tr>
+        <tr>
+            <td><mark>&lt;textarea&gt;</mark></td>
+            <td>Text Area Field</td>
+            <td>used to create a bigger text field. Use "rows" and "cols" attributes to determine size. Any text in between the opening and closing tags will be the default value to the text area.</td>
+        </tr>
+    </tbody>
+</table>
+
+
+
+<div class="headerbanner">
+    <h1>CSS Reference Table</h1>
+    </div>
+    <h2>Table Tags</h2>
+    <table>
+        <thead>
+            <tr>
+                <th scope="col">Tag</th>
+                <th scope="col">Name</th>
+                <th scope="col">Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><mark>&lt;table&gt;</mark></td>
+                <td>Table</td>
+                <td>The wrapper element for all HTML tables.</td>
+            </tr>
+
+
+        </tbody>
+    </table>
+
 </body>
- 
+
 </html>
